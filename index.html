@@ -14,10 +14,27 @@
             display: block;
             margin: 0 auto;
         }
+        span {
+            position: absolute;
+            top: 50%;
+            left: 0;
+        }
     </style>
 </head>
 <body>
     <canvas id="canvas" width="500px" height="580px"></canvas>
+    <span id="coordinate"></span>
+    <script>
+        //增加坐标
+        var body = document.body;
+        body.onmousemove = coordinate;
+        function coordinate(event) {
+            var x = event.clientX;
+            var y = event.clientY;
+            var put = document.getElementById("coordinate");
+            put.innerHTML = "x:" + x + " y:" + y;
+        }
+    </script>
     <script src="./js/main.js"></script>
 </body>
 </html>
